@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ActivateWindows</AssemblyName>
+    <RootNamespace>ActivateWindows</RootNamespace>
+  </PropertyGroup>
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>imageres_158_1.ico</ApplicationIcon>
+		<Authors>Sakuzyo-kun</Authors>
+		<Company>Sakuzyo-kun</Company>
+		<PackageIcon>imageres_158_0.png</PackageIcon>
+		<Description>A WPF joke app that displays a customizable "Activate Windows" watermark on your desktop.</Description>
+		<RepositoryUrl>https://github.com/sakuzyokun/ActivateWindows</RepositoryUrl>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Title>$(AssemblyName)</Title>
+	</PropertyGroup>
+	<ItemGroup>
+		<Using Remove="System.Windows.Forms" />
+		<Using Remove="System.Drawing" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="imageres_158_1.ico" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\imageres_158_0.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+</Project>

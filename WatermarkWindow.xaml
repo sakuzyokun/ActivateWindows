@@ -1,0 +1,25 @@
+<Window x:Class="ActivateWindows.WatermarkWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="Manual"
+        UseLayoutRounding="True"
+        Opacity="0"
+        Left="0" Top="0">
+    <!-- Opacity="0" は初回配置が終わるまでチラつかせないため。配置後にコードで 1 にする -->
+    <StackPanel x:Name="WatermarkText" Margin="12" IsHitTestVisible="False">
+        <TextBlock x:Name="Line1" Text="Activate Windows" FontSize="20"
+                   FontFamily="Segoe UI" FontWeight="Normal"
+                   Foreground="#80FFFFFF" TextAlignment="Right"/>
+        <TextBlock x:Name="Line2" Text="Go to Settings to activate Windows."
+                   FontSize="12" FontFamily="Segoe UI" FontWeight="Normal"
+                   Foreground="#80FFFFFF" TextAlignment="Right"/>
+    </StackPanel>
+</Window>

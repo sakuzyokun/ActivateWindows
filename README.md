@@ -1,24 +1,27 @@
-# Windows Activate Watermark
+# Activate Windows (WPF)
 
-A WPF joke application that displays the classic "Activate Windows" watermark in the corner of your screen. 
+Windows desktop watermark parody app. It does not change Windows activation status.
 
-## ✨ Features
-- **Customizable Text**: Edit both lines to whatever you like.
-- **Flexible Positioning**: Choose from corners, center, or custom X/Y coordinates.
-- **Multi-Monitor Support**: Display the watermark across all connected monitors.
-- **Click-Through Support**: Mouse clicks pass right through the watermark.
-- **System Tray Integration**: Runs quietly in the tray with quick controls.
-- **Visual Tweaks**: Adjust font size, HEX color, and opacity seamlessly.
+## Requirements
+- Windows 10/11
+- .NET 8 SDK (Windows)
+- Visual Studio 2022 with the .NET desktop development workload, or `dotnet` CLI
 
-## 🚀 How to Use
-1. Download the latest release or build the project.
-2. Launch `ActivateWindows.exe`.
-3. Customize your watermark text, color, and position in the settings window.
-4. Click **Preview** or **Apply** to show the watermark.
-5. Close the settings window to minimize it to the system tray.
+## Run
+From this folder:
+```powershell
+dotnet run
+```
 
-## ⚠️ Disclaimer
-This is a purely **joke application** designed for fun. It does not modify, bypass, or hack your actual Windows activation status. 
+## Publish a standalone folder
+```powershell
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+Output is under `bin\Release\net8.0-windows\win-x64\publish\`.
 
-## 📄 License
-MIT License
+## Notes
+- The overlay is a transparent, borderless WPF window.
+- Default color is white with 50% opacity, matching `#FFFFFF80` in CSS RGBA notation.
+- WPF's ARGB equivalent for that color is `#80FFFFFF`.
+- Click-through is enabled by default; uncheck it if you want to interact with the overlay window.
+- The app currently has no tray icon or settings persistence. Use the `表示を終了` button to close the overlay. The checkbox can also make the overlay close when the settings window closes.

@@ -1,0 +1,112 @@
+<Window x:Class="ActivateWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource AppTitle}"
+        Width="560" Height="720" MinWidth="520" MinHeight="640"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFF5F5F5">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="0,0,0,16">
+            <TextBlock Text="{DynamicResource HeaderTitle}" FontSize="26" FontWeight="Bold"/>
+            <TextBlock Text="{DynamicResource HeaderSubtitle}"
+                       Margin="0,5,0,0" Foreground="#FF555555" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <GroupBox Header="{DynamicResource GroupText}" Padding="12" Margin="0,0,0,12">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Line1}"/>
+                        <TextBox x:Name="Line1Box" Text="Activate Windows" Margin="0,4,0,10"/>
+                        <TextBlock Text="{DynamicResource Line2}"/>
+                        <TextBox x:Name="Line2Box" Text="Go to Settings to activate Windows." Margin="0,4,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource GroupPosition}" Padding="12" Margin="0,0,0,12">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource PosPreset}"/>
+                        <ComboBox x:Name="PositionBox" SelectedIndex="0" Margin="0,4,0,10"
+                                  SelectionChanged="PositionBox_SelectionChanged">
+                            <ComboBoxItem Content="{DynamicResource PosBottomRight}"/>
+                            <ComboBoxItem Content="{DynamicResource PosBottomLeft}"/>
+                            <ComboBoxItem Content="{DynamicResource PosTopRight}"/>
+                            <ComboBoxItem Content="{DynamicResource PosTopLeft}"/>
+                            <ComboBoxItem Content="{DynamicResource PosCenter}"/>
+                            <ComboBoxItem Content="{DynamicResource PosCustom}"/>
+                        </ComboBox>
+                        <CheckBox x:Name="AllMonitorsBox" IsChecked="True" Margin="0,0,0,10"
+                                  Content="{DynamicResource AllMonitors}"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="X" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBox x:Name="XBox" Grid.Column="1" Text="0" Margin="0,0,16,0"/>
+                            <TextBlock Text="Y" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                            <TextBox x:Name="YBox" Grid.Column="3" Text="0"/>
+                        </Grid>
+                        <TextBlock Text="{DynamicResource CustomPosDesc}"
+                                   Foreground="#FF666666" TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource GroupAppearance}" Padding="12" Margin="0,0,0,12">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{DynamicResource TextColor}" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBox x:Name="ColorBox" Grid.Column="1" Text="#FFFFFF" Margin="0,0,10,0"/>
+                            <Button Grid.Column="2" Content="{DynamicResource ResetColor}" Click="ResetColor_Click" Padding="10,3"/>
+                        </Grid>
+                        <DockPanel Margin="0,0,0,5">
+                            <TextBlock Text="{DynamicResource Opacity}" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="OpacityLabel" DockPanel.Dock="Right" Text="50%" VerticalAlignment="Center"/>
+                        </DockPanel>
+                        <Slider x:Name="OpacitySlider" Minimum="0" Maximum="100" Value="50"
+                                TickFrequency="10" IsSnapToTickEnabled="False"
+                                ValueChanged="OpacitySlider_ValueChanged"/>
+                        <DockPanel Margin="0,10,0,0">
+                            <TextBlock Text="{DynamicResource FontSize}" VerticalAlignment="Center" DockPanel.Dock="Left"/>
+                            <TextBox x:Name="FontSizeBox" Text="20" Width="70" HorizontalAlignment="Right"/>
+                        </DockPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="{DynamicResource GroupBehavior}" Padding="12">
+                    <StackPanel>
+                        <CheckBox x:Name="ClickThroughBox" IsChecked="True"
+                                  Content="{DynamicResource ClickThrough}" Margin="0,0,0,8"/>
+                        <CheckBox x:Name="TopmostBox" IsChecked="True"
+                                  Content="{DynamicResource Topmost}" Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ExitWithSettingsBox" IsChecked="False"
+                                  Content="{DynamicResource ExitWithSettings}"/>
+                        <TextBlock Text="{DynamicResource Disclaimer}"
+                                   Foreground="#FF666666" TextWrapping="Wrap" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <DockPanel Grid.Row="2" Margin="0,16,0,0" LastChildFill="False">
+            <TextBlock x:Name="StatusText" Text="{DynamicResource StatusReady}" VerticalAlignment="Center"
+                       Foreground="#FF555555" DockPanel.Dock="Left" Margin="0,0,10,0"/>
+            <Button Content="{DynamicResource BtnClose}" Click="CloseOverlay_Click" Padding="12,7" Margin="0,0,8,0" DockPanel.Dock="Right"/>
+            <Button Content="{DynamicResource BtnPreview}" Click="Preview_Click" Padding="12,7" Margin="0,0,8,0" DockPanel.Dock="Right"/>
+            <Button Content="{DynamicResource BtnApply}" Click="Apply_Click" Padding="16,7" DockPanel.Dock="Right"/>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- UI Strings -->
+    <sys:String x:Key="AppTitle">Activate Windows - Settings</sys:String>
+    <sys:String x:Key="HeaderTitle">Activate Windows</sys:String>
+    <sys:String x:Key="HeaderSubtitle">Show the iconic watermark even on activated Windows.</sys:String>
+
+    <!-- Display Text Group -->
+    <sys:String x:Key="GroupText">Display Text</sys:String>
+    <sys:String x:Key="Line1">Line 1</sys:String>
+    <sys:String x:Key="Line2">Line 2</sys:String>
+
+    <!-- Position Group -->
+    <sys:String x:Key="GroupPosition">Position</sys:String>
+    <sys:String x:Key="PosPreset">Position Preset</sys:String>
+    <sys:String x:Key="PosBottomRight">Bottom Right</sys:String>
+    <sys:String x:Key="PosBottomLeft">Bottom Left</sys:String>
+    <sys:String x:Key="PosTopRight">Top Right</sys:String>
+    <sys:String x:Key="PosTopLeft">Top Left</sys:String>
+    <sys:String x:Key="PosCenter">Center</sys:String>
+    <sys:String x:Key="PosCustom">Custom Coordinates</sys:String>
+    <sys:String x:Key="AllMonitors">Display on all monitors (Primary only if unchecked)</sys:String>
+    <sys:String x:Key="CustomPosDesc">Custom coordinates are in physical pixels. Top-left of the primary monitor is (0,0). In multi-monitor setups, virtual desktop coordinates apply. Only 1 display is shown in custom mode.</sys:String>
+
+    <!-- Appearance Group -->
+    <sys:String x:Key="GroupAppearance">Appearance</sys:String>
+    <sys:String x:Key="TextColor">Text Color (#RRGGBB)</sys:String>
+    <sys:String x:Key="ResetColor">Reset to White</sys:String>
+    <sys:String x:Key="Opacity">Opacity</sys:String>
+    <sys:String x:Key="FontSize">Font Size</sys:String>
+
+    <!-- Behavior Group -->
+    <sys:String x:Key="GroupBehavior">Behavior</sys:String>
+    <sys:String x:Key="ClickThrough">Pass clicks through to background apps (Recommended)</sys:String>
+    <sys:String x:Key="Topmost">Always on top</sys:String>
+    <sys:String x:Key="ExitWithSettings">Exit app when settings window closes (Minimizes to tray if unchecked)</sys:String>
+    <sys:String x:Key="Disclaimer">* Rendered via standard transparent window. Does NOT modify actual Windows activation status. You can toggle/exit from the tray icon.</sys:String>
+
+    <!-- Footer Buttons & Status -->
+    <sys:String x:Key="StatusReady">Ready</sys:String>
+    <sys:String x:Key="StatusHide">Watermark hidden</sys:String>
+    <sys:String x:Key="StatusShow">Watermark visible</sys:String>
+    <sys:String x:Key="StatusPreview">Preview mode</sys:String>
+    <sys:String x:Key="StatusApplied">Settings applied!</sys:String>
+    <sys:String x:Key="BtnClose">Hide Overlay</sys:String>
+    <sys:String x:Key="BtnPreview">Preview</sys:String>
+    <sys:String x:Key="BtnApply">Apply</sys:String>
+</ResourceDictionary>
